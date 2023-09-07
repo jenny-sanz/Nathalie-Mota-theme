@@ -1,0 +1,58 @@
+/*
+Theme Name: Nathalie-Mota-theme
+Theme URI: https://www.nathalie-mota.com
+Author: Jennifer Sanz
+Author URI: https://www.nathalie-mota.com
+Description: thème personnalisé sur mesure pour une photgraphe d'événements
+Version: 1.0
+*/
+
+/*import des fonts space mono et poppins */
+@font-face {
+  font-family: 'Space Mono';
+  src: url('assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+//* import des templates css 
+/* Header - Footer */
+@import 'assets/sass/_header.scss';
+@import 'assets/sass/_footer.scss';
+/* Single custom post photo-details */
+@import 'assets/sass/photo_details';
+/* Struture  catalogue photo : accueil et single post */
+@import 'assets/sass/catalogue-photos';
+// popup contact
+@import 'assets/sass/popup_contact';
+/* Page d'accueil */
+@import 'assets/sass/index';
+@import 'assets/sass/banner';
+/* lightbox */
+@import 'assets/sass/lightbox';
+
+// Breakpoints media queries
+@import 'assets/sass/variables/breakpoints';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  max-width: 80vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    
+  @media screen and (max-width: $mobile), screen and (max-width: $tablet), screen and (max-width: $laptop){
+    max-width: 90%;
+  }
+}

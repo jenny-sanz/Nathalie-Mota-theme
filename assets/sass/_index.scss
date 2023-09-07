@@ -1,0 +1,167 @@
+ @import 'variables/breakpoints';
+
+ .filter {
+     width: 100%;
+     height: 100px;
+     display: flex;
+     align-items: center;
+
+     form {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 100%;
+
+         .select-wrapper {
+             width: 100%;
+             display: flex;
+
+             .annee {
+                 margin-left: auto;
+             }
+         }
+
+         .js-example-basic-single {
+             width: 16.25rem;
+             height: 2.5rem;
+             background: #FFF;
+             padding-inline: 10px;
+         }
+
+
+         .select2-container--default .select2-selection--single {
+             background-color: #fff;
+             border: 1px solid #aaa;
+             border-radius: 5px;
+             width: 16.25rem;
+             height: 2.5rem;
+             padding-top: 6px;
+             font-family: 'Poppins', sans-serif;
+             font-size: 0.75rem;
+             font-style: normal;
+             font-weight: 500;
+             text-transform: uppercase;
+         }
+
+         .select2-container--default .select2-selection--single .select2-selection__arrow {
+             height: 26px;
+             position: absolute;
+             top: 6px;
+             right: 1px;
+             width: 20px;
+         }
+     }
+ }
+
+ /* Custom bibliotheque select2 */
+ .select2-container--default .select2-results .select2-results__options {
+     font-family: 'Poppins', sans-serif !important;
+     font-size: 0.75rem;
+     font-weight: 500;
+ }
+
+ /* Couleurs select du formulaire de filtres */
+ .select2-container--default .select2-results__option--highlighted[aria-selected] {
+     background-color: transparent !important;
+     color: #000 !important;
+ }
+
+ .select2-container--default .select2-results__option {
+     &:hover {
+         background-color: #FE5858 !important;
+         color: white !important;
+     }
+
+     &:first-child {
+         background-color: #FFD6D6 !important;
+         color: #000 !important;
+     }
+
+     &:not(:first-child)[aria-selected=true] {
+         background-color: #E00000 !important;
+         color: #fff !important;
+     }
+ }
+
+ /* Bouton charger plus */
+ @import 'mixins/mixins';
+
+ #load-more-container {
+     width: 100%;
+     height: 120px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     .btn {
+         @include btn;
+     }
+ }
+
+
+
+
+ /* Responsive */
+ @media screen and (max-width: $mobile) {
+     .filter {
+
+         form {
+             overflow-x: auto;
+             width: 600px;
+             margin-left: 1rem;
+
+             .select-wrapper {
+                 width: 100%;
+
+                 .formats,
+                 .annee {
+                     margin-left: 5px;
+                 }
+             }
+
+             .js-example-basic-single {
+                 width: 16rem;
+             }
+         }
+
+         .select2-container--default .select2-selection--single {
+             width: 16rem;
+         }
+     }
+ }
+
+ @media screen and (max-width: $tablet) {
+     .filter {
+         form {
+             overflow-x: auto;
+             width: 1000px;
+
+             .select-wrapper {
+                 width: 100%;
+
+
+                 .formats,
+                 .annee {
+                     margin-left: 10px;
+                 }
+             }
+         }
+     }
+ }
+
+ @media screen and (min-width: $laptop) {
+     form {
+         overflow-x: auto;
+         width: 1100px;
+
+         .select-wrapper {
+             width: 100%;
+
+
+             .formats,
+             .annee {
+                 margin-left: 10px;
+             }
+         }
+     }
+ }

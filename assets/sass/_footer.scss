@@ -1,0 +1,51 @@
+.site__footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    text-transform: uppercase;
+    border-top: 1px solid #000;
+
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        gap: 5.38rem;
+        list-style-type: none;
+
+        font: {
+            size: 1rem;
+            family: 'Space Mono', monospace;
+            weight: 400;
+        }
+
+        &:after {
+            content: 'Tous droits réservés'
+        }
+
+        li {
+            a {
+                color: #000;
+                text-decoration: none;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .site__footer {
+        height: 13em;
+
+        &__menu {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+    }
+}

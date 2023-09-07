@@ -1,0 +1,143 @@
+@import 'variables/breakpoints';
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.80);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-content {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    //padding: 1em;
+
+
+    .lightbox-image {
+      object-fit: contain;
+      width: 90%;
+      height: 90%;
+      aspect-ratio: 1/1;
+
+
+    }
+
+    .reference {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      position: absolute;
+      bottom: 0;
+      left: 18.5em;
+
+      @media screen and (max-width: $mobile) {
+        bottom: 4em;
+        left: 15em;
+      }
+
+      @media screen and (min-width: 466px) and (max-width: $laptopL) {
+        left: 6em;
+      }
+
+    }
+
+    .categorie {
+      font-family: 'Space Mono', monospace;
+      font-weight: 400;
+      position: absolute;
+      bottom: 0;
+      right: 18.5em;
+
+      @media screen and (max-width: $mobile) {
+        bottom: 4em;
+        right: 15em;
+      }
+
+      @media screen and (min-width: $mobile) and (max-width: $laptopL) {
+        right: 6em;
+      }
+    }
+
+  }
+
+  .close,
+  .previous,
+  .next {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    text-transform: none;
+
+
+    &.close {
+
+      top: 0;
+      right: 1em;
+    }
+
+    &.previous {
+      left: 0;
+      font-size: 12px;
+      font-family: 'Space Mono', monospace;
+
+      @media screen and (min-width: 1281px) {
+        left: -5.5em;
+      }
+    }
+
+    &.next {
+      right: 0;
+      font-size: 12px;
+      font-family: 'Space Mono', monospace;
+
+      @media screen and (min-width: 1281px) {
+        right: -5.5em;
+      }
+    }
+
+    &.next,
+    &.previous {
+      span {
+        @media screen and (min-width: $mobile) and (max-width: $laptopL) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        bottom: 0;
+      }
+    }
+  }
+
+  &.open {
+
+    .previous,
+    .next,
+    .close {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+}
